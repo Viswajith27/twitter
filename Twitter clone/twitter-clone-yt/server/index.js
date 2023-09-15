@@ -14,7 +14,7 @@ dotenv.config();
 // Use the 'cors' middleware to enable CORS
 app.use(
   cors({
-    origin: ["https://deploy-mern-frontend.vercel.app"],
+    origin: ["https://twitter-clone-frontend-woad.vercel.app/"],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   })
