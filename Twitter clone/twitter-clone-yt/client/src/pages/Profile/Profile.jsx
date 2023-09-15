@@ -5,7 +5,7 @@ import EditProfile from "../../components/EditProfile/EditProfile";
 
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import axios from "axios";
+import axios from "../../redux/axiosconfig";
 import Tweet from "../../components/Tweet/Tweet";
 
 import { following } from "../../redux/userSlice";
