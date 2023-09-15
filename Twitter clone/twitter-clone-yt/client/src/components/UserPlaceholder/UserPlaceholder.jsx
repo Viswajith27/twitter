@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../redux/axiosconfig";
 import React, { useState, useEffect } from "react";
 
 import { useLocation, useParams } from "react-router-dom";
