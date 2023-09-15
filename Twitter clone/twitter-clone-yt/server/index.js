@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import path from "path";
+
 import cookieParser from "cookie-parser";
 
 import userRoutes from "./routes/users.js";
@@ -41,10 +41,9 @@ app.use("/api/tweets", tweetRoutes);
 app.use(express.static(path.join(__dirname, "build")));
 
 // Serve the React app on any route that doesn't match an API route
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+app.get('*', (req, res) => {
+  res.sendFile('index.html', {root: 'public'});
 });
-
 const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
