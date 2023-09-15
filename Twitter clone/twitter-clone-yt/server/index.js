@@ -41,8 +41,8 @@ app.use("/api/tweets", tweetRoutes);
 
 
 // Serve the React app on any route that doesn't match an API route
-app.get('*', (req, res) => {
-  res.sendFile('index.html', {root: 'public'});
+app.get('/', (req, res) => {
+  res.json("hello);
 });
 const port = process.env.PORT || 8000;
 
