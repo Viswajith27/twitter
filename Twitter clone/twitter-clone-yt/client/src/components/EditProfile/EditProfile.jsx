@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from "../../redux/axiosconfig";
 import { useDispatch, useSelector } from "react-redux";
 
 import { changeProfile, logout } from "../../redux/userSlice";
