@@ -1,12 +1,21 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+
 import cookieParser from "cookie-parser";
 
 import userRoutes from "./routes/users.js";
 import authRoutes from "./routes/auths.js";
 import tweetRoutes from "./routes/tweets.js";
 
+const cors = require('cors')
+app.use(cors(
+    {
+        origin: ["https://deploy-mern-frontend.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 const app = express();
 dotenv.config();
 
