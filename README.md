@@ -50,8 +50,8 @@ The following technologies were used to build this Mini Twitter Clone:
 - React.js: A JavaScript library for building user interfaces.
 - Node.js: A runtime environment for executing server-side code.
 - JWT: JSON Web Tokens for authentication.
-- Cloudinary: For image/video uploading and hosting.
-- HTML/CSS: For frontend design and styling.
+- Firebase: For image/video uploading and hosting.
+- Materialui: For frontend design and styling.
 
 ## Getting Started
 
@@ -86,9 +86,7 @@ Before you begin, ensure you have the following software installed:
    ```
    MONGODB_URI=your_mongodb_uri
    JWT_SECRET=your_jwt_secret
-   CLOUDINARY_NAME=your_cloudinary_name
-   CLOUDINARY_API_KEY=your_cloudinary_api_key
-   CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+   
    ```
 
 5. Start the backend server:
