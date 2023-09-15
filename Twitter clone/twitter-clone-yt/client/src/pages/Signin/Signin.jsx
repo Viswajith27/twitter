@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "../../redux/axiosconfig";
-
 import { useDispatch } from "react-redux";
 import { loginStart, loginSuccess, loginFailed } from "../../redux/userSlice";
 
@@ -10,7 +9,7 @@ const Signin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-
+  const [error, setError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -22,14 +21,20 @@ const Signin = () => {
       dispatch(loginSuccess(res.data));
       navigate("/");
     } catch (err) {
+      if (err.response && err.response.status === 404) {
+        setError("User not found"); // Set error message
+      }  if (err.response && err.response.status === 400) {
+        setError("Wrong password"); // Set error message
+      } 
       dispatch(loginFailed());
     }
   };
 
+
   const handleSignup = async (e) => {
     e.preventDefault();
     dispatch(loginStart());
-
+  
     try {
       const res = await axios.post("/auth/signup", {
         username,
@@ -39,14 +44,19 @@ const Signin = () => {
       dispatch(loginSuccess(res.data));
       navigate("/");
     } catch (err) {
+      if (err.response && err.response.status === 409) {
+        setError("User already exists"); // Set error message
+      } else {
+        setError("An error occurred"); // Handle other errors
+      }
       dispatch(loginFailed());
     }
   };
-
+  
   return (
     <form className="bg-gray-200 flex flex-col py-12 px-8 rounded-lg w-8/12 md:w-6/12 mx-auto gap-10">
       <h2 className="text-3xl font-bold text-center">Sign in to Twitter</h2>
-
+      {error && <p className="text-red-500">{error}</p>}{" "}
       <input
         onChange={(e) => setUsername(e.target.value)}
         type="text"
