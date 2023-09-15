@@ -38,7 +38,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/tweets", tweetRoutes);
 // Serve static files from the 'build' directory (the output of 'npm run build')
-app.use(express.static(path.join(__dirname, "build")));
+
 
 // Serve the React app on any route that doesn't match an API route
 app.get('*', (req, res) => {
