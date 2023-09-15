@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TimelineTweet from "../TimelineTweet/TimelineTweet";
 
 import { useSelector } from "react-redux";
-import axios from "axios";
+import axios from "../../redux/axiosconfig";
 
 const MainTweet = () => {
   const [tweetText, setTweetText] = useState("");
