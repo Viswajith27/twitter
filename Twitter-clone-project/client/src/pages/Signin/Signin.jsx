@@ -32,11 +32,10 @@ const Signin = () => {
       dispatch(loginFailed());
     }
   };
-
   const handleSignup = async (e) => {
     e.preventDefault();
     dispatch(loginStart());
-
+  
     try {
       const res = await axios.post("/auth/signup", {
         username,
@@ -46,9 +45,15 @@ const Signin = () => {
       dispatch(loginSuccess(res.data));
       navigate("/");
     } catch (err) {
+      if (err.response && err.response.status === 409) {
+        setError("User already exists"); // Set error message
+      } else {
+        setError("An error occurred"); // Handle other errors
+      }
       dispatch(loginFailed());
     }
   };
+  
 
   return (
     <form className="bg-gray-200 flex flex-col py-12 px-8 rounded-lg w-8/12 md:w-6/12 mx-auto gap-10">

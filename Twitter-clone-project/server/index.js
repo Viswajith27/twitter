@@ -11,6 +11,7 @@ import tweetRoutes from "./routes/tweets.js";
 const app = express();
 dotenv.config();
 
+
 // Use the 'cors' middleware to enable CORS
 app.use(
   cors({
@@ -20,12 +21,13 @@ app.use(
   })
 );
 
+
 const connect = () => {
   mongoose.set("strictQuery", false);
   mongoose
     .connect(process.env.MONGO)
     .then(() => {
-      console.log("Connected to MongoDB database");
+      console.log("connect to mongodb database");
     })
     .catch((err) => {
       throw err;
