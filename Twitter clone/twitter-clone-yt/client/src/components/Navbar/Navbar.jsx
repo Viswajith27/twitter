@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import StarBorderPurple500Icon from "@mui/icons-material/StarBorderPurple500";
 import SearchIcon from "@mui/icons-material/Search";
 
 import { useLocation } from "react-router-dom";
@@ -13,7 +12,7 @@ const Navbar = () => {
     <div className="grid grid-cols-1 md:grid-cols-4 my-5 justify-center">
       <div className="mx-auto md:mx-0">
         <img
-          src="/twitter-logo.png"
+          src="/.png"
           alt="Twitter Logo"
           width={"40px"}
           className="ml-8"
@@ -31,7 +30,6 @@ const Navbar = () => {
               "Home"
             )}
           </h2>
-          <StarBorderPurple500Icon />
         </div>
       </div>
 
