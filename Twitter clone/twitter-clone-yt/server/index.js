@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-
+import path from "path";
 import cookieParser from "cookie-parser";
 
 import userRoutes from "./routes/users.js";
@@ -37,8 +37,17 @@ app.use(express.json());
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/tweets", tweetRoutes);
+// Serve static files from the 'build' directory (the output of 'npm run build')
+app.use(express.static(path.join(__dirname, "build")));
 
-app.listen(8000, () => {
+// Serve the React app on any route that doesn't match an API route
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
+const port = process.env.PORT || 8000;
+
+app.listen(port, () => {
   connect();
-  console.log("Listening to port 8000");
+  console.log(`Server is running on port ${port}`);
 });
