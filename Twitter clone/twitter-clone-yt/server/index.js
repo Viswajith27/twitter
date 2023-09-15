@@ -9,6 +9,7 @@ import authRoutes from "./routes/auths.js";
 import tweetRoutes from "./routes/tweets.js";
 
 const cors = require('cors')
+const app = express();
 app.use(cors(
     {
         origin: ["https://deploy-mern-frontend.vercel.app"],
@@ -16,7 +17,7 @@ app.use(cors(
         credentials: true
     }
 ));
-const app = express();
+
 dotenv.config();
 
 const connect = () => {
