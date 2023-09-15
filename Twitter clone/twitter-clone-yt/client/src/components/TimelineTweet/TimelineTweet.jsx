@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../redux/axiosconfig";
 
 import { useSelector } from "react-redux";
 import Tweet from "../Tweet/Tweet";
