@@ -31,7 +31,7 @@ const connect = () => {
       throw err;
     });
 };
-
+app.get('/', (req, res) => { res.json("hello"); });
 app.use(cookieParser());
 app.use(express.json());
 app.use("/api/users", userRoutes);
