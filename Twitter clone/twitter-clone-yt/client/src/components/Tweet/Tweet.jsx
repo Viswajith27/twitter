@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../redux/axiosconfig";
 import React, { useState } from "react";
 import formatDistance from "date-fns/formatDistance";
 
