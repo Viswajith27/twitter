@@ -4,7 +4,3 @@
 
 <!-- CREDITS -->
 <h2 id="credits"> :scroll: Credits</h2>
-
-Oliver G
-
-[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/oliver-gomes)
